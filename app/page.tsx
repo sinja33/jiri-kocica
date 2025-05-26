@@ -16,14 +16,14 @@ export default function Home() {
             <img
               src="/home.png"
               alt="Jiri Kocica Sculpture"
-              className="max-h-[85vh] max-w-full object-contain"
+              className="max-h-[90vh] max-w-full object-contain"
             />
             
           </div>
         </section>
 
         {/* About/Description Section */}
-        <section className="py-16 md:py-24">
+        <section className="py-0 md:py-8">
           <div className="container mx-auto px-4 text-center">
             <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto font-light leading-relaxed">
               Exploring the boundaries between form, space, and meaning through sculptural works that challenge
@@ -31,9 +31,9 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg">
-                <Link href="/work">View Collection</Link>
+                <Link href="/work">View Work</Link>
               </Button>
-              <Button variant="outline" asChild size="lg">
+              <Button asChild size="lg">
                 <Link href="/contact">Contact</Link>
               </Button>
             </div>

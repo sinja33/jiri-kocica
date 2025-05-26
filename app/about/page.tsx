@@ -13,10 +13,12 @@ export default function AboutPage() {
 
       <main className="flex-grow">
         <section className="container mx-auto px-4 py-16 md:py-24">
-          <h1 className="text-4xl md:text-5xl font-bold mb-12 text-center">About</h1>
-          <p className="text-lg text-gray-600 mb-16 text-center max-w-3xl mx-auto">
-            Learn about Jiři Kočica's life, his beginnings in art and sculpture.
-          </p>
+          <section>
+            <h1 className="text-4xl md:text-5xl font-bold mb-12 text-center">About</h1>
+            <p className="text-lg text-gray-600 mb-16 text-center max-w-3xl mx-auto">
+              Learn about Jiři Kočica's life, his beginnings in art and sculpture.
+            </p>
+          </section>
 
           <div className="flex flex-col md:flex-row items-center mb-16">
             <div className="w-full md:w-1/2 mb-8 md:mb-0">
@@ -81,7 +83,7 @@ export default function AboutPage() {
                 </div>
               </div>
               <div className="flex flex-col md:flex-row">
-                <div className="w-full md:w-1/4 font-bold pl-4">1985-1991</div>
+                <div className="w-full md:w-1/4 font-bold pl-4">1986-1991</div>
                 <div className="w-full md:w-3/4 pl-4">
                   <h3 className="font-semibold">Academy of Fine Arts and Design</h3>
                   <p className="text-gray-600">Department of Sculpture, Ljubljana</p>
