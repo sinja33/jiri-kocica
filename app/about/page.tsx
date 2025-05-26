@@ -69,24 +69,24 @@ export default function AboutPage() {
 
           <div className="bg-gray-50 p-8 rounded-lg mb-16">
             <h2 className="text-3xl font-bold mb-6 text-center">Education & Background</h2>
-            <div className="space-y-4 max-w-3xl mx-auto">
+            <div className="space-y-4 max-w-3xl mx-auto pl-20">
               <div className="flex flex-col md:flex-row">
-                <div className="w-full md:w-1/4 font-bold">1981-1985</div>
-                <div className="w-full md:w-3/4">
+                <div className="w-full md:w-1/4 font-bold pl-4">1981-1985</div>
+                <div className="w-full md:w-3/4 pl-4">
                   <h3 className="font-semibold">High School of Design and Photography</h3>
                   <p className="text-gray-600">Graphic Design Course, Ljubljana</p>
                 </div>
               </div>
               <div className="flex flex-col md:flex-row">
-                <div className="w-full md:w-1/4 font-bold">1985-1991</div>
-                <div className="w-full md:w-3/4">
+                <div className="w-full md:w-1/4 font-bold pl-4">1985-1991</div>
+                <div className="w-full md:w-3/4 pl-4">
                   <h3 className="font-semibold">Academy of Fine Arts and Design</h3>
                   <p className="text-gray-600">Department of Sculpture, Ljubljana</p>
                 </div>
               </div>
               <div className="flex flex-col md:flex-row">
-                <div className="w-full md:w-1/4 font-bold">1991-1993</div>
-                <div className="w-full md:w-3/4">
+                <div className="w-full md:w-1/4 font-bold pl-4">1991-1993</div>
+                <div className="w-full md:w-3/4 pl-4">
                   <h3 className="font-semibold">Specialization</h3>
                   <p className="text-gray-600">Academy of Fine Arts and Design, Ljubljana</p>
                 </div>
