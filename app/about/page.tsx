@@ -13,41 +13,56 @@ export default function AboutPage() {
 
       <main className="flex-grow">
         <section className="container mx-auto px-4 py-16 md:py-24">
-          <h1 className="text-4xl md:text-5xl font-bold mb-12 text-center">About Jiri Kocica</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-12 text-center">Biography</h1>
 
           <div className="flex flex-col md:flex-row items-center mb-16">
             <div className="w-full md:w-1/2 mb-8 md:mb-0">
-              <div className="aspect-square bg-gray-100 rounded-lg"></div>
+              <div className="aspect-square bg-gray-100 rounded-lg">
+                <img className='rounded-lg' src='./jiri-about.png' alt="Jiři Kočica"></img>
+              </div>
             </div>
             <div className="w-full md:w-1/2 md:pl-12">
-              <h2 className="text-3xl font-bold mb-6">The Artist</h2>
               <p className="text-gray-600 mb-4">
-                Jiri Kocica is a contemporary sculptor whose work explores the relationship between material, form, and
-                spatial dynamics. With a background in both traditional and experimental techniques, Kocica creates
-                pieces that challenge viewers to reconsider their perception of three-dimensional art.
+                Jiři Kočica was born in 1966 in Slovenj Gradec, Slovenia. 
+                He completed his secondary school education in design and photography, 
+                specializing in graphic design, in Ljubljana in 1985. He continued his studies at 
+                the Academy of Fine Arts in Ljubljana and graduated with a diploma in 
+                "Sculpture at a Specific Location" in 1991 under the supervision of professors 
+                Lujo Vodopivec and Tomaž Brejc. He completed his specialization in 1993 with the 
+                topic "Kata-logos" under the guidance of Professor Dušan Tršar.
               </p>
               <p className="text-gray-600">
-                His sculptures have been exhibited in galleries across Europe and North America, earning recognition for
-                their innovative approach to materiality and conceptual depth.
+                Currently, he is employed as a university professor at the Department of Visual Arts 
+                and Design at the University of Primorska. Prior to that, he was a professor of design 
+                and arrangement at the Secondary School for Arrangement. 
+                He served as an external collaborator and assistant professor at the Faculty of 
+                Education, University of Maribor, at the Department of Fine Arts for several years.
               </p>
             </div>
           </div>
 
           <div className="flex flex-col md:flex-row-reverse items-center mb-16">
             <div className="w-full md:w-1/2 mb-8 md:mb-0 md:pl-12">
-              <div className="aspect-square bg-gray-100 rounded-lg"></div>
+              <div className="aspect-square bg-gray-100 rounded-lg">
+                <img className='rounded-lg' src='./jiri2-about.png' alt="Jiři Kočica"></img>
+              </div>
             </div>
             <div className="w-full md:w-1/2 md:pr-12">
-              <h2 className="text-3xl font-bold mb-6">Artistic Approach</h2>
               <p className="text-gray-600 mb-4">
-                Kocica's work is characterized by a deep investigation of form, material properties, and the dialogue
-                between object and space. His sculptures often incorporate unexpected juxtapositions of materials,
-                creating tensions that invite contemplation and reinterpretation.
+                Since 1993, he has actively published in scientific, professional, and popular journals, 
+                and has contributed to several major monographic publications. He was involved in the 
+                conceptual design of a four-year project called "Contemporary Sculpture Today" at the 
+                Celje Gallery of Contemporary Art. He also participated in a symposium on the connection 
+                between science and art in Zagreb. He has been the curator of exhibitions at the Gallery of 
+                the Slovenian Institute for Chemistry in Ljubljana for seven years. As an artist, he has had 
+                over 70 solo exhibitions in various prominent galleries in Slovenia and abroad. 
+                He co-organized and participated in the transformation of old prisons at Metelkova into 
+                the artistic Youth Hostel Celica. He has created several public sculptures, including an 
+                important monument on Pohorje on the occasion of the establishment of the Pahernik Fund, 
+                and a central large sculpture at the Pregl Research Centre in Ljubljana.
               </p>
               <p className="text-gray-600">
-                Drawing inspiration from both natural phenomena and architectural principles, his pieces exist at the
-                intersection of organic and constructed forms, challenging conventional categorizations of sculptural
-                practice.
+                Jiři Kočica lives and works in Ljubljana with his wife Vilma Ducman and three children.
               </p>
             </div>
           </div>
@@ -56,46 +71,36 @@ export default function AboutPage() {
             <h2 className="text-3xl font-bold mb-6 text-center">Education & Background</h2>
             <div className="space-y-4 max-w-3xl mx-auto">
               <div className="flex flex-col md:flex-row">
-                <div className="w-full md:w-1/4 font-bold">2010-2014</div>
+                <div className="w-full md:w-1/4 font-bold">1981-1985</div>
                 <div className="w-full md:w-3/4">
-                  <h3 className="font-semibold">Master of Fine Arts, Sculpture</h3>
-                  <p className="text-gray-600">Academy of Arts, Architecture and Design, Prague</p>
+                  <h3 className="font-semibold">High School of Design and Photography</h3>
+                  <p className="text-gray-600">Graphic Design Course, Ljubljana</p>
                 </div>
               </div>
               <div className="flex flex-col md:flex-row">
-                <div className="w-full md:w-1/4 font-bold">2006-2010</div>
+                <div className="w-full md:w-1/4 font-bold">1985-1991</div>
                 <div className="w-full md:w-3/4">
-                  <h3 className="font-semibold">Bachelor of Arts, Fine Art</h3>
-                  <p className="text-gray-600">University of Arts, Berlin</p>
+                  <h3 className="font-semibold">Academy of Fine Arts and Design</h3>
+                  <p className="text-gray-600">Department of Sculpture, Ljubljana</p>
                 </div>
               </div>
               <div className="flex flex-col md:flex-row">
-                <div className="w-full md:w-1/4 font-bold">2014-2015</div>
+                <div className="w-full md:w-1/4 font-bold">1991-1993</div>
                 <div className="w-full md:w-3/4">
-                  <h3 className="font-semibold">Artist Residency</h3>
-                  <p className="text-gray-600">International Sculpture Center, New York</p>
+                  <h3 className="font-semibold">Specialization</h3>
+                  <p className="text-gray-600">Academy of Fine Arts and Design, Ljubljana</p>
                 </div>
               </div>
             </div>
           </div>
 
           <div className="text-center">
-            <h2 className="text-3xl font-bold mb-6">Artist Statement</h2>
             <div className="max-w-3xl mx-auto">
               <p className="text-gray-600 mb-4 italic">
-                "My work investigates the boundaries between physical presence and perceptual experience. Through
-                sculpture, I seek to create moments of encounter that challenge our understanding of materiality and
-                form.
+                "Now this is the language of sculpture, the one that whispers to us in its silent voice and touches our hearts."
               </p>
               <p className="text-gray-600 mb-4 italic">
-                Each piece emerges from a dialogue between concept, material, and process—a conversation that continues
-                as the viewer engages with the work in space. I am interested in the tensions that arise when familiar
-                materials are transformed, when expected relationships are disrupted, and when the line between the
-                natural and the constructed becomes blurred.
-              </p>
-              <p className="text-gray-600 italic">
-                Ultimately, my sculptures are invitations to reconsider our relationship with the physical world and the
-                frameworks through which we interpret it."
+                Jiři Kočica
               </p>
             </div>
           </div>
