@@ -1,15 +1,15 @@
+"use client"
+
+import { useState } from "react"
 import Link from "next/link"
+import { motion, useScroll, useTransform } from "framer-motion"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import { Button } from "@/components/ui/button"
 
-export const metadata = {
-  title: "Work - Jiri Kocica",
-  description: "Explore the sculptural works and art collections by contemporary artist Jiri Kocica.",
-}
-
 export default function WorkPage() {
-  // Sample work data
+  const [visibleCount, setVisibleCount] = useState(10)
+
   const collections = [
     {
       id: "exhibition-1",
@@ -477,36 +477,71 @@ export default function WorkPage() {
     }
   ]
 
+  const visibleCollections = collections.slice(0, visibleCount)
+  const hasMore = visibleCount < collections.length
+
+  const loadMore = () => {
+    setVisibleCount(prev => Math.min(prev + 10, collections.length))
+  }
+
   return (
     <div className="min-h-screen bg-white flex flex-col">
       <Navigation />
 
       <main className="flex-grow">
         <section className="container mx-auto px-4 py-16 md:py-24">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">Exhibitions</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">
+            Exhibitions
+          </h1>
           <p className="text-lg text-gray-600 mb-16 text-center max-w-3xl mx-auto">
             Explore Jiři Kocica's various exhibitions.
           </p>
 
           {/* Timeline Container */}
           <div className="relative max-w-6xl mx-auto">
-            {/* Vertical Timeline Line */}
+            {/* Static Timeline Line */}
             <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 bg-gray-300 h-full hidden md:block"></div>
 
             {/* Timeline Items */}
-            {collections.map((collection, index) => (
-              <div key={collection.id} className="relative mb-16 md:mb-24">
+            {visibleCollections.map((collection, index) => (
+              <motion.div 
+                key={collection.id} 
+                className="relative -mb-8 md:-mb-16"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ 
+                  duration: 0.6,
+                  delay: index * 0.1,
+                  ease: "easeOut"
+                }}
+              >
                 {/* Timeline Node */}
                 <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-black rounded-full border-4 border-white shadow-lg z-10 hidden md:block"></div>
 
                 {/* Content Container */}
-                <div className={`md:flex md:items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+                <div className={`md:flex md:items-center ${
+                  collection.image 
+                    ? (index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse')
+                    : 'md:justify-center'
+                }`}>
+                  
                   {/* Content Card */}
-                  <div className={`w-full ${
-                    collection.image 
-                      ? `md:w-6/12 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`
-                      : 'md:w-10/12'
-                  }`}>
+                  <motion.div 
+                    className={`w-full ${
+                      collection.image 
+                        ? `md:w-6/12 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`
+                        : 'md:w-10/12'
+                    }`}
+                    initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ 
+                      duration: 0.7,
+                      delay: index * 0.1 + 0.2,
+                      ease: "easeOut"
+                    }}
+                  >
                     <div className="bg-white p-8 rounded-lg shadow-lg border">
                       <div className="flex items-center justify-between mb-4">
                         <h2 className="text-2xl md:text-3xl font-bold">{collection.title}</h2>
@@ -517,6 +552,7 @@ export default function WorkPage() {
                       </div>
                       <p className="text-gray-600 mb-6">{collection.shortDescription}</p>
                       
+                      {/* Image inside the card - only show if image exists */}
                       {collection.image && (
                         <div className="w-full mt-8">
                           <div className="w-64 h-64 overflow-hidden rounded mx-auto">
@@ -527,25 +563,48 @@ export default function WorkPage() {
                             />
                           </div>
                         </div>
-
                       )}
-                      <Button variant="outline" className="mt-6">
-                        View Collection
-                      </Button>
+                      
+                      <div>
+                        <Button variant="outline" className="mt-6">
+                          View Collection
+                        </Button>
+                      </div>
                     </div>
-                  </div>
+                  </motion.div>
 
                   {/* Mobile-only year indicator */}
                   <div className="md:hidden absolute top-0 left-0 bg-black text-white px-3 py-1 rounded-br-lg">
                     {collection.year}
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
 
+          {/* Load More Button */}
+          {hasMore && (
+            <motion.div 
+              className="text-center mt-24"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <Button onClick={loadMore} variant="outline" size="lg">
+                Show More Exhibitions
+              </Button>
+            </motion.div>
+          )}
+
           {/* Commission Section */}
-          <div className="bg-gray-50 p-8 rounded-lg mt-16">
+          <motion.div 
+            className="bg-gray-50 p-8 rounded-lg mt-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <h2 className="text-2xl font-bold mb-6 text-center">Commission a Custom Piece</h2>
             <p className="text-center text-gray-600 mb-6 max-w-2xl mx-auto">
               Interested in commissioning a custom sculpture for your space? Jiri Kocica creates bespoke pieces for
@@ -556,7 +615,7 @@ export default function WorkPage() {
                 <Link href="/contact">Inquire About Commissions</Link>
               </Button>
             </div>
-          </div>
+          </motion.div>
         </section>
       </main>
 
