@@ -41,7 +41,7 @@ export default function WorkPage() {
       year: "2018",
       location: "Ljubljana",
       shortDescription: "The release of the book (novel) \"Izvirnik\" (Source or Origin) and the nomination for the Kresnik Award",
-      image: "./Biti1.jpg"
+      image: "./izvirnik.jpg"
     },
     {
       id: "exhibition-5",
@@ -49,7 +49,23 @@ export default function WorkPage() {
       year: "2016",
       location: "Vienna",
       shortDescription: "Sculpture installation and event",
-      image: "./Biti1.jpg"
+      image: "./artsidethebox2.jpg"
+    },
+    {
+      id: "exhibition-6",
+      title: "Open studio",
+      year: "2015",
+      location: "Ljubljana",
+      shortDescription: "Month of the open studio",
+      image: "./odprtiatelje1.jpg"
+    },
+    {
+      id: "exhibition-7",
+      title: "Heritage",
+      year: "2014",
+      location: "Nova Gorica",
+      shortDescription: "",
+      image: "./NGprerokinje.jpg"
     },
   ]
 
