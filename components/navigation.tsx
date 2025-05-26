@@ -24,7 +24,7 @@ export default function Navigation() {
   ]
 
   return (
-    <header className="container mx-auto px-4 py-6 flex justify-between items-center">
+    <header className="container mx-auto py-6 flex justify-between items-center">
       <Link href="/" className="font-bold text-xl z-10">
         Jiři Kočica
       </Link>

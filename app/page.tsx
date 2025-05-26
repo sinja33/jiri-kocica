@@ -10,21 +10,15 @@ export default function Home() {
 
       <main className="flex-grow">
         {/* Hero Section with Overlaid Title */}
-        <section className="relative h-screen flex items-center justify-center">
+        <section className="relative h-screen flex justify-center">
           {/* Sculpture Image - smaller, centered */}
           <div className="relative z-0">
             <img
-              src="/očetovstvo.png"
+              src="/home.png"
               alt="Jiri Kocica Sculpture"
-              className="max-h-[90vh] max-w-full object-contain"
+              className="max-h-[70vh] max-w-full object-contain"
             />
             
-            {/* Overlaid Artist Name */}
-            <div className="absolute inset-0 flex items-start justify-start pt-56 pl-20">
-              <h1 className="font-bold text-5xl">
-                JIŘI KOČICA
-              </h1>
-            </div>
           </div>
         </section>
 
