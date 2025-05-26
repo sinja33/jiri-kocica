@@ -37,7 +37,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Featured Preview */}
+        {/* Featured Preview
         <section className="bg-gray-50 py-16">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold mb-8 text-center">Featured Work</h2>
@@ -64,7 +64,7 @@ export default function Home() {
               </Button>
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
 
       <Footer />

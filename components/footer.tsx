@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
-            <div className="font-bold text-xl mb-2">Jiri Kocica</div>
+            <div className="font-bold text-xl mb-2">Jiři Kočica</div>
             <p className="text-gray-400">Contemporary Sculpture Artist</p>
           </div>
           <nav className="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-6 md:mb-0">
@@ -39,7 +39,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
-          &copy; {new Date().getFullYear()} Jiri Kocica. All rights reserved.
+          &copy; {new Date().getFullYear()} Jiři Kočica. All rights reserved.
         </div>
       </div>
     </footer>

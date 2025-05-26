@@ -18,7 +18,7 @@ export default function Navigation() {
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/work", label: "Work" },
-    { href: "/gallery", label: "3D Gallery" },
+    { href: "/gallery", label: "Gallery" },
     { href: "/exhibitions", label: "Exhibitions" },
     { href: "/contact", label: "Contact" },
   ]
