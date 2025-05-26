@@ -16,7 +16,7 @@ export default function Home() {
             <img
               src="/home.png"
               alt="Jiri Kocica Sculpture"
-              className="max-h-[70vh] max-w-full object-contain"
+              className="max-h-[85vh] max-w-full object-contain"
             />
             
           </div>
