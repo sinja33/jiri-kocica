@@ -502,7 +502,11 @@ export default function WorkPage() {
                 {/* Content Container */}
                 <div className={`md:flex md:items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                   {/* Content Card */}
-                  <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`}>
+                  <div className={`w-full ${
+                    collection.image 
+                      ? `md:w-6/12 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`
+                      : 'md:w-10/12'
+                  }`}>
                     <div className="bg-white p-8 rounded-lg shadow-lg border">
                       <div className="flex items-center justify-between mb-4">
                         <h2 className="text-2xl md:text-3xl font-bold">{collection.title}</h2>
@@ -514,8 +518,8 @@ export default function WorkPage() {
                       <p className="text-gray-600 mb-6">{collection.shortDescription}</p>
                       
                       {collection.image && (
-                        <div className={`w-full md:w-5/12 mt-8 md:mt-0 ${index % 2 === 0 ? 'md:pl-12' : 'md:pr-12'}`}>
-                          <div className="w-64 h-64 overflow-hidden rounded">
+                        <div className="w-full mt-8">
+                          <div className="w-64 h-64 overflow-hidden rounded mx-auto">
                             <img
                               src={collection.image}
                               alt={`${collection.title} image`}
@@ -523,8 +527,8 @@ export default function WorkPage() {
                             />
                           </div>
                         </div>
+
                       )}
-                      
                       <Button variant="outline" className="mt-6">
                         View Collection
                       </Button>
