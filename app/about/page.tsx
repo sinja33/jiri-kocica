@@ -14,6 +14,9 @@ export default function AboutPage() {
       <main className="flex-grow">
         <section className="container mx-auto px-4 py-16 md:py-24">
           <h1 className="text-4xl md:text-5xl font-bold mb-12 text-center">Biography</h1>
+          <p className="text-lg text-gray-600 mb-16 text-center max-w-3xl mx-auto">
+            Learn about Jiři Kočica's life, his beginnings in art and sculpture.
+          </p>
 
           <div className="flex flex-col md:flex-row items-center mb-16">
             <div className="w-full md:w-1/2 mb-8 md:mb-0">
