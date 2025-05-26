@@ -80,63 +80,32 @@ export default function ContactPage() {
               <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
               <div className="bg-gray-50 p-6 rounded-lg mb-8">
                 <div className="mb-6">
-                  <h3 className="font-semibold mb-2">Studio Address</h3>
+                  <h3 className="font-semibold mb-2">Home Address</h3>
                   <p className="text-gray-600">
-                    Kunsthalle Studio Complex
+                    Kebetova ulica 34
                     <br />
-                    Hauptstrasse 123
-                    <br />
-                    10559 Berlin, Germany
+                    1000 Ljubljana, Slovenia
                   </p>
                 </div>
                 <div className="mb-6">
                   <h3 className="font-semibold mb-2">Email</h3>
-                  <p className="text-gray-600">studio@jirikocica.com</p>
+                  <p className="text-gray-600">jiri.kocica@gmail.com</p>
                 </div>
                 <div>
                   <h3 className="font-semibold mb-2">Phone</h3>
-                  <p className="text-gray-600">+49 30 1234 5678</p>
+                  <p className="text-gray-600">+386 31 614 245</p>
                 </div>
               </div>
-
-              <h2 className="text-2xl font-bold mb-6">Studio Visits</h2>
-              <p className="text-gray-600 mb-4">
-                Studio visits are available by appointment for collectors, curators, and art professionals. Please
-                contact us to arrange a visit.
-              </p>
 
               <h2 className="text-2xl font-bold mb-6 mt-8">Representation</h2>
               <div className="space-y-4">
                 <div>
-                  <h3 className="font-semibold">Gallery Modern</h3>
-                  <p className="text-gray-600">Berlin, Germany</p>
-                  <a href="#" className="text-black hover:underline">
-                    gallerymodern.com
-                  </a>
-                </div>
-                <div>
-                  <h3 className="font-semibold">Contemporary Arts Space</h3>
-                  <p className="text-gray-600">Prague, Czech Republic</p>
-                  <a href="#" className="text-black hover:underline">
-                    contemporaryartsspace.cz
-                  </a>
+                  <h3 className="font-semibold">Gallery Mulec</h3>
+                  <p className="text-gray-600">Trubarjeva cesta 22</p>
+                  <p className="text-gray-600">1000 Ljubljana</p>
+                  <p className="text-gray-600">Slovenia</p>
                 </div>
               </div>
-            </div>
-          </div>
-
-          <div className="bg-gray-50 p-8 rounded-lg">
-            <h2 className="text-2xl font-bold mb-6 text-center">Newsletter</h2>
-            <p className="text-center text-gray-600 mb-6 max-w-2xl mx-auto">
-              Subscribe to receive updates about new works, upcoming exhibitions, and events.
-            </p>
-            <div className="max-w-md mx-auto flex">
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="flex-grow px-4 py-2 border border-gray-300 rounded-l-md focus:ring-2 focus:ring-black focus:outline-none"
-              />
-              <Button className="rounded-l-none">Subscribe</Button>
             </div>
           </div>
         </section>

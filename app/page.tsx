@@ -1,6 +1,4 @@
-import { Suspense } from "react"
 import Link from "next/link"
-import SculptureViewer from "@/components/sculpture-viewer"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -10,7 +8,7 @@ export default function Home() {
     <div className="min-h-screen bg-white flex flex-col">
       <Navigation />
 
-      {/* Hero Section with 3D Sculpture */}
+      {/* Hero Section with Image */}
       <main className="flex-grow">
         <section className="container mx-auto px-4 py-12 md:py-24 flex flex-col md:flex-row items-center">
           <div className="w-full md:w-1/2 mb-8 md:mb-0 md:pr-8">
@@ -30,11 +28,11 @@ export default function Home() {
           </div>
           <div className="w-full md:w-1/2 h-[400px] md:h-[600px]">
             <div className="w-full h-full rounded-lg overflow-hidden bg-gray-100">
-              <Suspense
-                fallback={<div className="w-full h-full flex items-center justify-center">Loading 3D model...</div>}
-              >
-                <SculptureViewer />
-              </Suspense>
+              <img
+                src="/hero-sculpture.jpg"
+                alt="Jiri Kocica Sculpture"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </section>
