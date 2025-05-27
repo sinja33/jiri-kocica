@@ -2,6 +2,7 @@ import Link from "next/link"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import { Button } from "@/components/ui/button"
+import { publicDecrypt } from "crypto"
 
 export const metadata = {
   title: "Work - Jiri Kocica",
@@ -15,34 +16,163 @@ export default function WorkPage() {
       id: 1,
       image: "/work/Sanje.png",
       title: "Dreams",
-      material: "Marble and Wood"
+      materials: "Brač marble and wood",
+      length: "18 cm",
+      height: null
     },
     {
       id: 2,
       image: "/work/Mislec.png",
       title: "Thinker",
-      material: ""
+      materials: "Onyx",
+      length: null,
+      height: "10 cm"
     },
     {
       id: 3,
-      image: "./work/Speči otrok.png",
+      image: "/work/Speči otrok.png",
       title: "Sleeping Child",
-      material: "Marble"
+      materials: "Čačak marble",
+      length: "12 cm",
+      height: null
     },
     {
       id: 4,
-      image: "./work/Dojenček na dlani (detajl).png",
-      title: "Baby in the palm of your hand",
-      material: "Bronze and Stone"
+      image: "/work/Dojenček na dlani (detajl).png",
+      title: "Baby in Palm (detail)",
+      materials: "Bronze and stone",
+      length: "15 cm",
+      height: "200 cm"
     },
     {
       id: 5,
-      image: "./work/V objem (detajl).png",
-      title: "Into a hug",
-      material: "Bronze and Stone"
+      image: "/work/V objem (detajl).png",
+      title: "Into an Embrace (detail)",
+      materials: "Bronze and stone",
+      length: "15 cm",
+      height: "210 cm"
     },
+    {
+      id: 6,
+      image: "./work/Speči otrok (detajl) (1).png",
+      title: "Sleeping Child (detail)",
+      materials: "Bronze and stone",
+      length: "15 cm",
+      height: "185 cm"
+    },
+    {
+      id: 7,
+      image: "/work/Speči otrok (celotna skulptura).png",
+      title: "Sleeping Child (complete sculpture)",
+      materials: "Bronze and stone",
+      length: null,
+      height: null
+    },
+    {
+      id: 8,
+      image: "/work/Rojen s srebrno žlico 1.png",
+      title: "Born with Silver Spoon 1",
+      materials: "Wood and silver",
+      length: "12 cm", // spoon length
+      height: null
+    },
+    {
+      id: 9,
+      image: "/work/Rojen s srebrno žlico 2.png",
+      title: "Born with Silver Spoon 2",
+      materials: "Wood and silver",
+      length: "19 cm", // spoon length
+      height: null
+    },
+    {
+      id: 10,
+      image: "/work/Rojen s srebrno žlico 2 (zaprt).png",
+      title: "Born with Silver Spoon 2 (closed)",
+      materials: "Wood and silver",
+      length: null,
+      height: null
+    },
+    {
+      id: 11,
+      image: "/work/Rojen s srebrno žlico 3.png",
+      title: "Born with Silver Spoon 3",
+      materials: "Wood and silver",
+      length: "11 cm", // spoon length
+      height: null
+    },
+    {
+      id: 12,
+      image: "/work/Rojstvo.png",
+      title: "Birth",
+      materials: "Bronze and stone",
+      length: null,
+      height: "18 cm"
+    },
+    {
+      id: 13,
+      image: "/work/Krst.png",
+      title: "Baptism",
+      materials: "Bronze and stone",
+      length: null,
+      height: "25 cm"
+    },
+    {
+      id: 14,
+      image: "/work/Fontana - otrok.png",
+      title: "Fountain - Child",
+      materials: "Bronze, glass and stone",
+      length: "40 cm", // using dimensions 40x40x110
+      height: "110 cm"
+    },
+    {
+      id: 15,
+      image: "./work/Fontana - otrok (1).png",
+      title: "Fountain - Child",
+      materials: "Bronze, glass and stone",
+      length: null,
+      height: null
+    },
+    {
+      id: 16,
+      image: "./work/Fontana - očetovstvo (1).png",
+      title: "Fountain - Fatherhood",
+      materials: "Bronze, glass and stone",
+      length: "70 cm", // using dimensions 70x40x70
+      height: "70 cm"
+    },
+    {
+      id: 17,
+      image: "./work/Fontana - očetovstvo (2).png",
+      title: "Fountain - Fatherhood",
+      materials: "Bronze, glass and stone",
+      length: null,
+      height: null
+    },
+    {
+      id: 18,
+      image: "./work/Fontana - očetovstvo (3).png",
+      title: "Fountain - Fatherhood",
+      materials: "Bronze, glass and stone",
+      length: null,
+      height: null
+    },
+    {
+      id: 19,
+      image: "./work/Ljubezen.png",
+      title: "Love",
+      materials: "Brač marble",
+      length: null,
+      height: "100 cm"
+    },
+    {
+      id: 20,
+      image: "./work/Ljubezen2.png",
+      title: "Love",
+      materials: "Brač marble",
+      length: null,
+      height: null
+    }
   ]
-
   return (
     <div className="min-h-screen bg-white flex flex-col">
       <Navigation />
@@ -76,7 +206,13 @@ export default function WorkPage() {
                 <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-end">
                   <div className="p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                     <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                    <p className="text-sm opacity-90 mb-1">{item.material}</p>
+                    <p className="text-sm opacity-90 mb-1">{item.materials}</p>
+                    {item.length && (
+                      <p className="text-sm opacity-90 mb-1">Length: {item.length}</p>
+                    )}
+                    {item.height && (
+                      <p className="text-sm opacity-90 mb-1">Height: {item.height}</p>
+                    )}
                   </div>
                 </div>
               </div>
