@@ -19,7 +19,7 @@ export default function Home() {
             className="relative z-0 w-full max-w-4xl"
             initial={{ opacity: 0, scale: 0.8, y: 50 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <img
               src="/home.png"
@@ -43,7 +43,7 @@ export default function Home() {
               <Button asChild size="lg">
                 <Link href="/work">View Collection</Link>
               </Button>
-              <Button variant="outline" asChild size="lg">
+              <Button asChild size="lg">
                 <Link href="/contact">Contact</Link>
               </Button>
             </div>
