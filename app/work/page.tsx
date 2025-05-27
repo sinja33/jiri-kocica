@@ -180,158 +180,152 @@ export default function WorkPage() {
       <Navigation />
 
       <main className="flex-grow">
-        <section className="container mx-auto px-4 py-16 md:py-24">
-          <h1 
-            className="text-4xl md:text-5xl font-bold mb-6 text-center"
-          >
-            Work
-          </h1>
-          <p 
-            className="text-lg text-gray-600 mb-12 text-center max-w-3xl mx-auto"
-          >
+        <section className="container mx-auto px-4 py-12 ">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">Work</h1>
+          <p className="text-lg text-gray-600 mb-16 text-center max-w-3xl mx-auto">
             Explore Jiří Kočica's sculptural works crafted with traditional materials and contemporary vision.
           </p>
-        </section>
 
-        {/* Gallery Grid */}
-        <section className="container mx-auto px-4 pb-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {galleryItems.map((item, index) => (
-              <motion.div
-                key={item.id}
-                className="group relative overflow-hidden bg-white rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer"
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: index * 0.05 }}
-                whileHover={{ 
-                  y: -5,
-                  transition: { duration: 0.2 }
-                }}
-                onClick={() => setSelectedImage(item.id)}
-              >
-                {/* Image */}
-                <div className="aspect-[1/1] overflow-hidden">
-                  <motion.img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    whileHover={{ scale: 1.05 }}
-                  />
-                </div>
-                
-                {/* Content Overlay */}
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-end">
-                  <div className="p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                    <p className="text-sm opacity-90">{item.materials}</p>
-                    {item.length && <p className="text-sm opacity-75">Length: {item.length}</p>}
-                    {item.height && <p className="text-sm opacity-75">Height: {item.height}</p>}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </section>
-
-        {/* Commission Section */}
-        <motion.section 
-          className="bg-gray-50 py-16"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8 }}
-        >
-          <div className="container mx-auto px-4 text-center">
-            <motion.h2 
-              className="text-3xl font-bold mb-6"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              Commission a Custom Piece
-            </motion.h2>
-            <motion.p 
-              className="text-gray-600 mb-8 max-w-2xl mx-auto"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
-              Interested in commissioning a custom sculpture for your space? Jiří Kočica creates bespoke pieces for
-              private collectors, public spaces, and architectural projects.
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Button asChild size="lg">
-                <Link href="/contact">Inquire About Commissions</Link>
-              </Button>
-            </motion.div>
-          </div>
-        </motion.section>
-
-        {/* Image Modal */}
-        <AnimatePresence>
-          {selectedImage && (
-            <motion.div
-              className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setSelectedImage(null)}
-            >
-              <motion.div
-                className="relative max-w-4xl max-h-full"
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.8, opacity: 0 }}
-                transition={{ duration: 0.3 }}
-                onClick={(e) => e.stopPropagation()}
-              >
-                {/* Close button */}
-                <button
-                  onClick={() => setSelectedImage(null)}
-                  className="absolute top-4 right-4 z-10 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full p-2 transition-colors"
+          {/* Gallery Grid */}
+          <section className="container mx-auto px-4 pb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {galleryItems.map((item, index) => (
+                <motion.div
+                  key={item.id}
+                  className="group relative overflow-hidden bg-white rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer"
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.6, delay: index * 0.05 }}
+                  whileHover={{ 
+                    y: -5,
+                    transition: { duration: 0.2 }
+                  }}
+                  onClick={() => setSelectedImage(item.id)}
                 >
-                  <X className="w-6 h-6 text-white" />
-                </button>
+                  {/* Image */}
+                  <div className="aspect-[1/1] overflow-hidden">
+                    <motion.img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      whileHover={{ scale: 1.05 }}
+                    />
+                  </div>
+                  
+                  {/* Content Overlay */}
+                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-end">
+                    <div className="p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                      <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                      <p className="text-sm opacity-90">{item.materials}</p>
+                      {item.length && <p className="text-sm opacity-75">Length: {item.length}</p>}
+                      {item.height && <p className="text-sm opacity-75">Height: {item.height}</p>}
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </section>
 
-                {/* Image */}
-                <img
-                  src={galleryItems.find(item => item.id === selectedImage)?.image}
-                  alt={galleryItems.find(item => item.id === selectedImage)?.title}
-                  className="max-w-full max-h-full object-contain rounded-lg"
-                />
-
-                {/* Image info */}
-                <div className="absolute bottom-4 left-4 right-4 bg-black bg-opacity-60 text-white p-4 rounded-lg">
-                  <h3 className="text-xl font-bold mb-2">
-                    {galleryItems.find(item => item.id === selectedImage)?.title}
-                  </h3>
-                  <p className="text-sm opacity-90 mb-1">
-                    {galleryItems.find(item => item.id === selectedImage)?.materials}
-                  </p>
-                  {galleryItems.find(item => item.id === selectedImage)?.length && (
-                    <p className="text-sm opacity-75">
-                      Length: {galleryItems.find(item => item.id === selectedImage)?.length}
-                    </p>
-                  )}
-                  {galleryItems.find(item => item.id === selectedImage)?.height && (
-                    <p className="text-sm opacity-75">
-                      Height: {galleryItems.find(item => item.id === selectedImage)?.height}
-                    </p>
-                  )}
-                </div>
+          {/* Commission Section */}
+          <motion.section 
+            className="bg-gray-50 py-16"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="container mx-auto px-4 text-center">
+              <motion.h2 
+                className="text-3xl font-bold mb-6"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                Commission a Custom Piece
+              </motion.h2>
+              <motion.p 
+                className="text-gray-600 mb-8 max-w-2xl mx-auto"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                Interested in commissioning a custom sculpture for your space? Jiří Kočica creates bespoke pieces for
+                private collectors, public spaces, and architectural projects.
+              </motion.p>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Button asChild size="lg">
+                  <Link href="/contact">Inquire About Commissions</Link>
+                </Button>
               </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+            </div>
+          </motion.section>
+
+          {/* Image Modal */}
+          <AnimatePresence>
+            {selectedImage && (
+              <motion.div
+                className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setSelectedImage(null)}
+              >
+                <motion.div
+                  className="relative max-w-4xl max-h-full"
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.8, opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {/* Close button */}
+                  <button
+                    onClick={() => setSelectedImage(null)}
+                    className="absolute top-4 right-4 z-10 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full p-2 transition-colors"
+                  >
+                    <X className="w-6 h-6 text-white" />
+                  </button>
+
+                  {/* Image */}
+                  <img
+                    src={galleryItems.find(item => item.id === selectedImage)?.image}
+                    alt={galleryItems.find(item => item.id === selectedImage)?.title}
+                    className="max-w-full max-h-full object-contain rounded-lg"
+                  />
+
+                  {/* Image info */}
+                  <div className="absolute bottom-4 left-4 right-4 bg-black bg-opacity-60 text-white p-4 rounded-lg">
+                    <h3 className="text-xl font-bold mb-2">
+                      {galleryItems.find(item => item.id === selectedImage)?.title}
+                    </h3>
+                    <p className="text-sm opacity-90 mb-1">
+                      {galleryItems.find(item => item.id === selectedImage)?.materials}
+                    </p>
+                    {galleryItems.find(item => item.id === selectedImage)?.length && (
+                      <p className="text-sm opacity-75">
+                        Length: {galleryItems.find(item => item.id === selectedImage)?.length}
+                      </p>
+                    )}
+                    {galleryItems.find(item => item.id === selectedImage)?.height && (
+                      <p className="text-sm opacity-75">
+                        Height: {galleryItems.find(item => item.id === selectedImage)?.height}
+                      </p>
+                    )}
+                  </div>
+                </motion.div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </section>
       </main>
 
       <Footer />

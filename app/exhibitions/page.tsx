@@ -489,10 +489,8 @@ export default function WorkPage() {
       <Navigation />
 
       <main className="flex-grow">
-        <section className="container mx-auto px-4 py-16 md:py-24">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">
-            Exhibitions
-          </h1>
+        <section className="container mx-auto px-4 py-12 ">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">Exhibitions</h1>
           <p className="text-lg text-gray-600 mb-16 text-center max-w-3xl mx-auto">
             Explore Jiři Kocica's various exhibitions.
           </p>

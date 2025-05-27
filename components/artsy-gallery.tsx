@@ -384,7 +384,8 @@ export default function ArtsyGallery() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-gray-100 via-gray-50 to-gray-200 relative overflow-hidden">
+
       <BackgroundAnimation />
 
       {/* Floating Images */}
