@@ -261,7 +261,7 @@ export default function SculptureGallery() {
 
       <div className="mt-12 text-center">
         <p className="text-gray-600 max-w-2xl mx-auto">
-          Click on any sculpture to view it in fullscreen. Use your mouse to rotate, zoom, and explore each piece in detail.
+          Click on the sculpture to view it in fullscreen. Use your mouse to rotate, zoom, and explore the piece in detail.
         </p>
       </div>
     </div>
