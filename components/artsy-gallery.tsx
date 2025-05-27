@@ -1,7 +1,8 @@
 "use client"
 
 import { useState, useEffect } from 'react';
-import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { X } from 'lucide-react';
 
 type ImageSize = 'small' | 'medium' | 'large';
 
@@ -122,6 +123,7 @@ const galleryImages: GalleryImage[] = [
 ];
 
 function FloatingImage({ image, index }: { image: GalleryImage, index: number }) {
+  const [isFlipped, setIsFlipped] = useState(false);
 
   // Size classes based on image size property
   const sizeClasses: Record<ImageSize, string> = {
@@ -175,24 +177,53 @@ function FloatingImage({ image, index }: { image: GalleryImage, index: number })
         right: window?.innerWidth ? window.innerWidth - 50 : 1200,
         bottom: window?.innerHeight ? window.innerHeight * 2 : 2000,
       }}
+      style={{ perspective: 1000 }}
     >
-      {/* Image container with shadow and hover effects */}
-      <div className="relative w-full h-full rounded-lg overflow-hidden shadow-lg transform rotate-1 hover:rotate-0 transition-transform duration-300 pointer-events-none">
-        <img
-          src={image.src}
-          alt={image.title}
-          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 pointer-events-none"
-          draggable={false}
-        />
-        
-        {/* Overlay with image info */}
-        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-end pointer-events-none">
-          <div className="text-white p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-            <h3 className="font-bold text-lg">{image.title}</h3>
-            <p className="text-sm opacity-90">{image.year}</p>
+      {/* 3D Card Container */}
+      <motion.div
+        className="relative w-full h-full"
+        animate={{ rotateY: isFlipped ? 180 : 0 }}
+        transition={{ duration: 0.6 }}
+        style={{ transformStyle: "preserve-3d" }}
+        onClick={() => setIsFlipped(!isFlipped)}
+      >
+        {/* Front of card */}
+        <div className="absolute inset-0 w-full h-full backface-hidden rounded-lg overflow-hidden shadow-lg transform rotate-1 hover:rotate-0 transition-transform duration-300 pointer-events-none">
+          <img
+            src={image.src}
+            alt={image.title}
+            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 pointer-events-none"
+            draggable={false}
+          />
+          
+          {/* Overlay with image info */}
+          <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-end pointer-events-none">
+            <div className="text-white p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+              <h3 className="font-bold text-lg">{image.title}</h3>
+              <p className="text-sm opacity-90">{image.year}</p>
+            </div>
           </div>
         </div>
-      </div>
+
+        {/* Back of card */}
+        <div 
+          className="absolute inset-0 w-full h-full backface-hidden rounded-lg overflow-hidden shadow-lg bg-gray-800 text-white flex flex-col justify-center items-center p-6"
+          style={{ transform: 'rotateY(180deg)' }}
+        >
+          <h3 className="text-xl font-bold mb-4 text-center">{image.title}</h3>
+          <p className="text-lg mb-2">{image.year}</p>
+          <p className="text-sm opacity-75 text-center mb-4">Exhibition Piece</p>
+          <button 
+            onClick={(e) => {
+              e.stopPropagation();
+              setIsFlipped(false);
+            }}
+            className="bg-white text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors"
+          >
+            Flip Back
+          </button>
+        </div>
+      </motion.div>
     </motion.div>
   );
 }
@@ -247,6 +278,29 @@ export default function ArtsyGallery() {
         ))}
       </div>
 
+      {/* Scroll indicator */}
+      <motion.div
+        className="fixed bottom-8 left-1/2 transform -translate-x-1/2 text-gray-500 text-center z-10 pointer-events-none"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2, duration: 1 }}
+      >
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+        >
+          <div className="text-sm mb-2">Scroll to explore • Drag to rearrange • Click to flip</div>
+          <div className="w-6 h-6 border-2 border-gray-400 rounded-full mx-auto flex items-center justify-center">
+            <div className="w-1 h-1 bg-gray-400 rounded-full" />
+          </div>
+        </motion.div>
+      </motion.div>
+
+      <style jsx global>{`
+        .backface-hidden {
+          backface-visibility: hidden;
+        }
+      `}</style>
     </div>
   );
 }
