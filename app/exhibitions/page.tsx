@@ -537,8 +537,8 @@ export default function WorkPage() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ 
-                      duration: 0.7,
-                      delay: index * 0.1 + 0.2,
+                      duration: 0.5,
+                      delay: index * 0.1,
                       ease: "easeOut"
                     }}
                   >

@@ -1,11 +1,8 @@
+"use client"
+
+import { motion } from "framer-motion"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
-
-export const metadata = {
-  title: "Contact - Jiri Kocica",
-  description:
-    "Get in touch with contemporary sculptor Jiri Kocica for inquiries, commissions, or exhibition opportunities.",
-}
 
 export default function ContactPage() {
 
@@ -20,23 +17,21 @@ export default function ContactPage() {
             Get in touch with Jiri Kocica for inquiries about artworks, commissions, exhibitions, or collaborations.
           </p>
 
-
           <div className="w-full max-w-5xl mx-auto md:flex md:gap-12">
-            {/* Representation Info */}
-            <div className="w-full md:w-1/2 md:pl-12 mt-12 md:mt-0">
-              <h2 className="text-2xl font-bold mb-6">Representation</h2>
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="font-semibold mb-2">Gallery Mulec</h3>
-                <p className="text-gray-600">Trubarjeva cesta 22</p>
-                <p className="text-gray-600">1000 Ljubljana</p>
-                <p className="text-gray-600">Slovenia</p>
-              </div>
-            </div>
-
             {/* Contact Info */}
-            <div className="w-full md:w-1/2">
+            <motion.div 
+              className="w-full md:w-1/2"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
               <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
-              <div className="bg-gray-50 p-6 rounded-lg mb-8">
+              <motion.div 
+                className="bg-gray-50 p-6 rounded-lg mb-8"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+              >
                 <div className="mb-6">
                   <h3 className="font-semibold mb-2">Home Address</h3>
                   <p className="text-gray-600">
@@ -55,12 +50,30 @@ export default function ContactPage() {
                   <h3 className="font-semibold mb-2">Phone</h3>
                   <p className="text-gray-600">+386 31 614 245</p>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
+            {/* Representation Info */}
+            <motion.div 
+              className="w-full md:w-1/2 md:pl-12 mt-12 md:mt-0"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+            >
+              <h2 className="text-2xl font-bold mb-6">Representation</h2>
+              <motion.div 
+                className="bg-gray-50 p-6 rounded-lg"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.7 }}
+              >
+                <h3 className="font-semibold mb-2">Gallery Mulec</h3>
+                <p className="text-gray-600">Trubarjeva cesta 22</p>
+                <p className="text-gray-600">1000 Ljubljana</p>
+                <p className="text-gray-600">Slovenia</p>
+              </motion.div>
+            </motion.div>
           </div>
-
-        
         </section>
       </main>
 
