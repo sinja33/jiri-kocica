@@ -11,28 +11,17 @@ export default function SculpturesPage() {
       <Navigation />
 
       <main className="flex-grow">
-        <section className="container mx-auto px-4 pt-16 md:pt-24">
-          <motion.h1 
-            className="text-4xl md:text-5xl font-bold  text-center"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            Sculptures
-          </motion.h1>
-          <motion.p 
-            className="text-lg text-gray-600 mb-12 text-center max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            Explore Jiří Kočica's three-dimensional works in interactive 3D
-          </motion.p>
-        </section>
-        <section className="container mx-auto px-4 pb-16">
-          <SculptureGallery />
-        </section>
+        <section className="container mx-auto px-4 py-12 ">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">Sculptures</h1>
+          <p className="text-lg text-gray-600 mb-16 text-center max-w-3xl mx-auto">
+            Explore Jiří Kočica's sculptures in three dimensional space.
+          </p>
 
+          
+          <section className="container mx-auto px-4 pb-16">
+            <SculptureGallery />
+          </section>
+        </section>
       </main>
 
       <Footer />
