@@ -1,4 +1,7 @@
+"use client"
+
 import Link from "next/link"
+import { motion } from "framer-motion"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -10,20 +13,27 @@ export default function Home() {
 
       <main className="flex-grow">
         {/* Hero Section with Overlaid Title */}
-        <section className="relative h-screen flex justify-center">
+        <section className="relative h-screen flex items-center justify-center overflow-hidden">
           {/* Sculpture Image - smaller, centered */}
-          <div className="relative z-0">
+          <motion.div 
+            className="relative z-0"
+            initial={{ opacity: 0, scale: 0.8, y: 50 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+          >
             <img
               src="/home.png"
               alt="Jiri Kocica Sculpture"
-              className="max-h-[90vh] max-w-full object-contain"
+              className="max-h-[80vh] max-w-full object-contain"
             />
-            
-          </div>
+          
+          </motion.div>
+
+          
         </section>
 
         {/* About/Description Section */}
-        <section className="py-0 md:py-8">
+        <section className="py-16 md:py-24">
           <div className="container mx-auto px-4 text-center">
             <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto font-light leading-relaxed">
               Exploring the boundaries between form, space, and meaning through sculptural works that challenge
@@ -31,9 +41,9 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg">
-                <Link href="/work">View Work</Link>
+                <Link href="/work">View Collection</Link>
               </Button>
-              <Button asChild size="lg">
+              <Button variant="outline" asChild size="lg">
                 <Link href="/contact">Contact</Link>
               </Button>
             </div>
