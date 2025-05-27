@@ -24,7 +24,7 @@ export default function Navigation() {
   ]
 
   return (
-    <header className="container mx-auto px-4 py-6 flex justify-between items-center">
+    <header className="container mx-auto py-6 flex justify-between items-center">
       <Link href="/" className="font-bold text-xl z-10">
         Jiři Kočica
       </Link>
@@ -45,13 +45,13 @@ export default function Navigation() {
       </nav>
 
       {/* Mobile Menu Button */}
-      <Button variant="ghost" size="icon" className="md:hidden z-10" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+      <Button variant="ghost" size="icon" className="md:hidden z-50" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
         {mobileMenuOpen ? <X /> : <Menu />}
       </Button>
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 bg-white z-0 flex flex-col items-center justify-center">
+        <div className="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center">
           <nav className="flex flex-col items-center space-y-8">
             {navLinks.map((link) => (
               <Link
