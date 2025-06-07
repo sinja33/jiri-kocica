@@ -15,6 +15,46 @@ export default function WorkPage() {
   // Gallery data with actual exhibition images
   const galleryItems = [
     {
+      id: 21,
+      image: "/IMG_3169.jpeg",
+      title: "Bird Day",
+      materials: "Bronze and stone",
+      length: null,
+      height: null
+    },
+    {
+      id: 22,
+      image: "/IMG_3171.jpeg",
+      title: "Bird Day",
+      materials: "Bronze and stone",
+      length: null,
+      height: null
+    },
+    {
+      id: 23,
+      image: "/IMG_3569.jpeg",
+      title: "Bird Day",
+      materials: "Bronze and stone",
+      length: null,
+      height: null
+    },
+    {
+      id: 24,
+      image: "/IMG_3571.jpeg",
+      title: "Bird Day",
+      materials: "Bronze and stone",
+      length: null,
+      height: null
+    },
+    {
+      id: 25,
+      image: "/IMG_7913.jpeg",
+      title: "Bird Day",
+      materials: "Bronze and stone",
+      length: null,
+      height: null
+    },
+    {
       id: 1,
       image: "/work/Sanje.png",
       title: "Dreams",
